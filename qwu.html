@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ioji</title>
+  <link rel = "stylesheet" href = "styles/general.css">
+  <link rel = "stylesheet" href = "styles/header.css">
+  <link rel = "stylesheet" href = "styles/contents.css">
+</head>
+<body>
+
+  <div class = "sideMenu">
+    <src class = title >Length</src>
+  
+    <nav>
+      <ul>
+        <li class = "create" id = "cbtn"><label>Create</label></li>
+        <li class = "Save" ><label>Save</label></li>
+        <li class = "Load" ><label>Load</label></li>
+        <li class = "Calendar" ><label>Calendar</label></li>
+        <li class = "option" id = "obtn"><label>Option</label></li>
+        <li class = "login"><label>Login</label></li>
+      </ul> 
+    </nav>
+
+    
+
+    <img class = "menuButton" id = "btn" src = "menuButton.png">
+  </div>
+
+  <div class = "contents">
+  
+    <form>
+      <fieldset>
+        <ul>
+          <li>
+              <input type = "text" class = "search" placeholder = "search">
+          </li>
+          <li>
+            <button type = "submit" class = "button">submit</button>
+          </li>
+        </ul>
+      </fieldset>
+    </form>
+   
+  </div>
+  
+  <div class = "main-content">
+    <div class = "container">
+
+    </div>
+  </div>
+  
+  
+</body>
+
+<script>
+  let btn = document.querySelector('#btn');
+  let cbtn = document.querySelector('#cbtn');
+  let obtn = document.querySelector('#obtn');
+  let lbtn = document.querySelector('#lbtn');
+  let sideMenu = document.querySelector('.sideMenu');
+
+  btn.onclick = function(){
+    sideMenu.classList.toggle('active');
+  };
+
+  cbtn.onclick = function(){
+    sideMenu.classList.toggle('create_active');
+  };
+
+  obtn.onclick = function(){
+    sideMenu.classList.toggle('option_active');
+  };
+
+  ltn.onclick = function(){
+    sideMenu.classList.toggle('login_active');
+  };
+
+
+
+
+</script>
+
+</html>
