@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Length</title>
+  <link rel = "stylesheet" href = "styles/general.css">
+  <link rel = "stylesheet" href = "styles/header.css">
+  <link rel = "stylesheet" href = "styles/contents.css">
+  <link rel = "stylesheet" href = "styles/menu.css">
+  <link rel = "stylesheet" href = "styles/sc_data.css">
+</head>
+<body>
+
+  <div class = "sideMenu">
+    <src class = title >Length</src>
+  
+    <nav>
+      <ul>
+        <li class = "create" id = "cbtn"><label>Create</label></li>
+        <li class = "Save" id = "sbtn"><label>Save</label></li>
+        <li class = "Load" ><label>Load</label></li>
+        <li class = "schedule" id = "scbtn"><label>Schedule</label></li>
+        <li class = "option" id = "obtn"><label>Option</label></li>
+        <li class = "login" id = "lbtn"><label>Login</label></li>
+      </ul> 
+    </nav>
+
+    <div id = "user_data"></div>
+  </div>
+
+  <div class = "contents">
+  </div>
+  
+  <div class = "setMenu">
+    <div class = "create_menu">
+      <table>
+        <tr>
+          <td><div class = "legth_block" id = "r_set"></div></td>
+          <td><div class = "legth_block" id = "g_set"></div></td>
+          <td><div class = "legth_block" id = "b_set"></div></td>
+          <td><div class = "delete_block" id = "bd_set"></div></td>
+          <td><div class = "point_block" id = "f_set"><label>S</label></div></td>
+          <td><div class = "point_block" id = "e_set"><label>F</label></div></td>
+        </tr>
+        <tr>
+          <td>
+            <input type = "number" class = "input_cost"  min = "1" max = "60">
+          </td>
+          <td>
+            <input type = "number" class = "input_cost"  min = "1" max = "60">
+          </td>
+          <td>
+            <input type = "number" class = "input_cost" min = "1" max = "60">
+          </td>
+          <td></td>
+          <td>
+            <input type = "number" class = "input_n" min = "1" max = "3">
+          </td>
+          <td>
+            <input type = "number" class = "input_n" min = "1" max = "3">
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class = "schedule_menu">
+      <form id="schedule_form">
+        <table>
+          <tr>
+            <td>
+              <label class = "s_text">description</label>
+            </td>
+            <td>
+              <textarea class = "description"></textarea>
+            </td>
+            <td>
+              <label class = "s_text">start time</label>
+            </td>
+            <td><input type = "time" class = "sc_data"></td>
+            <td><input type = "number" class = "path_num" value = "0" min = "0" max = "3"></td>
+            <td><button type = "submit" class = "s_button">Add</button>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+    <div class = sc_d>
+      <div id ="schedule_data"></div>
+    </div>
+    
+
+    <div class = "option_menu">
+      <table>
+        <tr>
+          <td><label class = "o_text">UI color</label></td>
+          <td><input type = "checkbox" class = "b_data"></td>
+          <td><label class = "o_text">Font size</label></td>
+          <td><input type = "number" class = "f_data" value = "1" min = "1" max = "3"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="login_menu">
+      <form id="login_form">
+          <table>
+              <tr>
+                  <td>
+                      <label class="l_text">ID</label>
+                      <input type="text" id="login_id" name="id" class="input_ID" maxlength="10" required>
+                  </td>
+                  <td rowspan="2">
+                      <button type="submit" id="login_button" class="s_button">Login</button>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      <label class="l_text">Password</label>
+                      <input type="password" id="login_password" name="password" class="input_password" maxlength="20" required>
+                  </td>
+              </tr>
+          </table>
+      </form>
+    </div>
+
+
+
+  </div>
+
+
+  
+  <script src="block.js"></script>
+  <script src="schedule.js"></script>
+  <script src="option.js"></script>
+  <script src="login.js"></script>
+  
+</body>
+
+<script>
+  let cbtn = document.querySelector('#cbtn');
+  let sbtn = document.querySelector('#sbtn');
+  let scbtn = document.querySelector('#scbtn');
+  let obtn = document.querySelector('#obtn');
+  let lbtn = document.querySelector('#lbtn');
+  let sideMenu = document.querySelector('.sideMenu');
+
+  cbtn.onclick = function(){
+    sideMenu.classList.toggle('create_active');
+    sideMenu.classList.remove('schedule_active', 'option_active', 'login_active');
+  };
+
+  sbtn.onclick = function(){
+    sideMenu.classList.toggle('save_active');
+    sideMenu.classList.remove('create_active', 'option_active', 'login_active');
+  };
+
+  scbtn.onclick = function(){
+    sideMenu.classList.toggle('schedule_active');
+    sideMenu.classList.remove('create_active', 'option_active', 'login_active');
+  }
+
+  obtn.onclick = function(){
+    sideMenu.classList.toggle('option_active');
+    sideMenu.classList.remove('create_active', 'schedule_active', 'login_active');
+  };
+
+  lbtn.onclick = function(){
+    sideMenu.classList.toggle('login_active');
+    sideMenu.classList.remove('create_active', 'schedule_active', 'option_active');
+  };
+
+
+
+</script>
+
+</html>
